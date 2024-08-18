@@ -1,0 +1,24 @@
+<div class="container" style="background-color: white;">
+  <%= render 'layouts/navbar' %>
+	<%= form_for TriviaQuestion.new, :url => url_for(:controller => 'trivias', :action => 'create') do |f| %>
+		<% @trivia_questions.each do |question| %>
+			<%= f.fields_for :questions do |q_form| %>
+				<div>
+					<h3> <%= question.title %> </h3>
+					<% question.trivia_answers.each do |answer| %>
+					  <div class="form-check">
+					  	 <%= q_form.radio_button "question_#{question.id}", answer.id, class: 'form-check-input' %> 
+					  	 <%= q_form.label :answers, answer.answer, class: "form-check-label" %>
+				  	  </div>
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+		<div>
+	    	<%= f.label :email, "Your Email:" %>
+	    	<%= f.email_field :email, required: true %>
+	 	</div>
+		<%= f.submit "Lets goo" %>
+	<% end %>
+ 
+</div>

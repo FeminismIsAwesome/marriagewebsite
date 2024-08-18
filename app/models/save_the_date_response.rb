@@ -1,0 +1,2 @@
+class SaveTheDateResponse < ApplicationRecord
+end
