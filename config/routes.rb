@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'home#index'
   resources :trivias, only: [:index, :create]
+  resources :faqs, only: [:index]
   resources :rsvps, only: [:index, :create]
 end

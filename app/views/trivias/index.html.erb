@@ -1,5 +1,4 @@
 <div class="container" style="background-color: white;">
-  <%= render 'layouts/navbar' %>
 	<%= form_for TriviaQuestion.new, :url => url_for(:controller => 'trivias', :action => 'create') do |f| %>
 		<% @trivia_questions.each do |question| %>
 			<%= f.fields_for :questions do |q_form| %>

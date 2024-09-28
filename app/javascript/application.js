@@ -16,4 +16,8 @@ $(document).ready(function(){
  $(".carousel-control-next").click(function() {
  	$('.carousel').carousel('next');
  });
+ $(".card-header button").click(function() {
+ 	var target = $(this).attr('data-target');
+ 	$(target).collapse('toggle');
+ });
 });
