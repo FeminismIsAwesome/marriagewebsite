@@ -2,7 +2,7 @@
   <%= form_for @person, :url => url_for(:controller => 'rsvps', :action => 'create') do |f| %>
    <div class="form-group">
     <h3>
-      Are you attending the wedding on June 7th 2025?
+      Will you be able to attend the wedding on the afternoon and evening of Saturday June 7th, 2025? 
     </h3>
       <div class="form-check">
      <%= f.radio_button :rsvp_status, true, class: 'form-check-input' %> 
@@ -26,16 +26,32 @@
    
   
 
-   <div class="form-group">
-    <%= f.label :dietary_restrictions, "Any dietary restrictions?" %>
-    <%= f.text_area :dietary_restrictions %> 
-   </div>
 
+ <div class="form-group">
+    <%= f.label :plus_one_counts, "How many other guests are attending the wedding with you? (You are welcome to bring a plus-one and/or your minor children.) " %>
+    <%= f.number_field :plus_one_counts, required: true, class: "form-control" %>
+  </div>
 
   <div class="form-group">
-    <%= f.label :plus_ones, "Any +1s? please list or say none" %>
-    <%= f.text_area :plus_ones, required: true, class: "form-control" %>
+    <%= f.label :plus_ones, "Please list the names of guests in your party besides yourself." %>
+    <%= f.text_area :plus_ones, class: "form-control" %>
   </div>
-  	<%= f.submit "Submit RSVP", class: "btn btn-primary end-btn" %>
+
+  <div class="form-group">
+    <%= f.label :little_ones, "Are any of the guests in your party under age 16? If yes, please specify how many and their names. " %>
+    <%= f.text_area :little_ones, class: "form-control" %>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :alcohol_passer_count, "Are any of the guests in your party not going to drink alcohol at the wedding? If yes, please specify how many. " %>
+    <%= f.number_field :alcohol_passer_count, class: "form-control" %>
+  </div>
+
+
+   <div class="form-group">
+    <%= f.label :dietary_restrictions, "Do you or any of the guests in your party have dietary restrictions or other allergies?" %>
+    <%= f.text_area :dietary_restrictions %> 
+   </div>
+    <%= f.submit "Submit RSVP", class: "btn btn-primary end-btn" %>
   <% end %>
 </div>
