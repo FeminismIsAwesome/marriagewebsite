@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :trivias, only: [:index, :create]
   resources :faqs, only: [:index]
   resources :rsvps, only: [:index, :create]
+  resources :registries, only: [:index]
 end
