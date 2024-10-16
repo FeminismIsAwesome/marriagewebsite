@@ -20,4 +20,8 @@ $(document).ready(function(){
  	var target = $(this).attr('data-target');
  	$(target).collapse('toggle');
  });
+ $(".navbar-toggler").click(function() {
+ 	var target = $(this).attr('data-target');
+ 	$(target).collapse('toggle');
+ });
 });
