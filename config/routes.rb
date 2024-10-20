@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :faqs, only: [:index]
   resources :rsvps, only: [:index, :create]
   resources :registries, only: [:index]
+  resources :contacts, only: [:index]
 end
