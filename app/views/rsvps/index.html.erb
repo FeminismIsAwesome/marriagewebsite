@@ -5,23 +5,23 @@
       Will you be able to attend the wedding on the afternoon and evening of Saturday June 7th, 2025? 
     </h3>
       <div class="form-check">
-     <%= f.radio_button :rsvp_status, true, class: 'form-check-input' %> 
+     <%= f.radio_button :rsvp_status, true, required: true, class: 'form-check-input' %> 
      <%= f.label :rsvp_status_yes, "I am attending", class: "form-check-label" %>
     </div>
   <div class="form-check">
 
-     <%= f.radio_button :rsvp_status, false, class: "form-check-input" %>
+     <%= f.radio_button :rsvp_status, false, required: true, class: "form-check-input" %>
      <%= f.label :rsvp_status_no, "I am not attending", class: "form-check-label" %>
   </div>
      </div>
   <div class="form-group">
     <%= f.label :name, "Name:" %>
-    <%= f.email_field :name, required: true, class: "form-control" %>
+    <%= f.text_field :name, required: true, class: "form-control" %>
   </div>
 
     <div class="form-group">
     <%= f.label :email, "Your Email:" %>
-    <%= f.text_field :email, required: true, class: "form-control" %>
+    <%= f.email_field :email, required: true, class: "form-control" %>
   </div>
    
   
