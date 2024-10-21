@@ -29,3 +29,25 @@ body {
 	margin-top: 10px;
 }
 
+
+
+@media(orientation: portrait){
+	.carouselHorizontal {
+		display: none;
+	}
+	.carousel .carousel-inner {
+		height:500px;
+	}
+
+	.carousel-inner .carousel-item img {
+		height:500px;
+	}
+}
+
+@media(orientation: landscape){
+	.carouselVertical {
+		display: none;
+	}
+}
+
+
