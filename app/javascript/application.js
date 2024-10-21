@@ -19,6 +19,7 @@ $(document).ready(function(){
  $(".card-header button").click(function() {
  	var target = $(this).attr('data-target');
  	$(target).collapse('toggle');
+ 	$(target).scrollIntoView();
  });
  $(".navbar-toggler").click(function() {
  	var target = $(this).attr('data-target');
