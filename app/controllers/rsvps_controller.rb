@@ -4,9 +4,14 @@ class RsvpsController < ApplicationController
 	end
 
 	def create
-		Person.find_or_initialize_by(email: person_params[:email]).update!(
+		@person = Person.find_or_initialize_by(email: person_params[:email])
+		if @person.update(
 			person_params)
-		redirect_to :root, notice: "Thanks for RSVPing!"
+			redirect_to :root, notice: "Thanks for RSVPing!"
+		else
+			@errored = true
+			render :index
+		end
 	end
 
 	private

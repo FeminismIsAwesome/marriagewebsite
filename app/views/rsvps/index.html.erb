@@ -1,5 +1,16 @@
 <div class="container" style="background-color: white;">
   <%= form_for @person, :url => url_for(:controller => 'rsvps', :action => 'create') do |f| %>
+
+  <% if @errored %>
+    <h3 class="alert alert-danger" role="alert">
+      Please fill out the errors!
+      <% @person.errors.full_messages.each do |msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
+    </h3>
+  <% end %>
    <div class="form-group">
     <h3>
       Will you be able to attend the wedding on the afternoon and evening of Saturday June 7th, 2025? 
