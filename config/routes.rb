@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :trivias, only: [:index, :create]
   resources :faqs, only: [:index]
+  resources :ceremonies, only: [:index]
   resources :rsvps, only: [:index, :create]
   resources :registries, only: [:index]
   resources :contacts, only: [:index]
