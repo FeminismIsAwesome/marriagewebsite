@@ -5,3 +5,6 @@ class Person < ApplicationRecord
 
 	validates :name, presence: true, unless: -> { trivia_hack.present? }
 end
+
+
+# 2268
